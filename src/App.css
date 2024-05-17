@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;0,700;1,400");
+
+:root {
+  /* Primary */
+  --accent: hsl(220, 98%, 61%);
+  --CheckBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  /* Dark Theme */
+  --primary: hsl(233, 11%, 84%);
+  --secondary: hsl(235, 24%, 19%);
+  --secondary2: hsl(235, 19%, 35%);
+  --secondary3: hsl(236, 9%, 61%);
+  --background: hsl(235, 21%, 11%);
+  --background2: hsl(235, 24%, 19%);
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  font-family: "Josefin Sans", sans-serif;
+}
+
+[type="light"] {
+  --accent: hsl(220, 98%, 61%);
+  --CheckBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --background: hsl(0, 0%, 98%);
+  --primary: hsl(234, 8%, 51%);
+  --secondary: hsl(235, 24%, 19%);
+  --secondary2: hsl(235, 19%, 35%);
+  --secondary3: hsl(236, 9%, 61%);
+  --background2: hsl(0, 0%, 98%);
+
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  background: var(--background);
+  background-image: url("./assets/bg.png");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: Var(--primary);
+  height: 100vh;
+}
+
+.container {
+  width: clamp(20rem, s10vw + 20rem, 42rem);
+}
+
+.new_todo {
+  height: 3rem;
+  border-radius: 5px;
+  background-color: var(--background2);
+  color: var(--secondary);
+  border: none;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.new_todo input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  outline: transparent;
+  color: var(--secondary3);
+}
+
+.new_todo-btn {
+  height: 100%;
+  width: 50px;
+  background-color: transparent;
+  color: var(--secondary2);
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 200ms ease-in-out;
+}
+
+.new_todo-btn:hover {
+  color: var(--accent);
+}
+
+.checkbox-container {
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.checkbox {
+  /* position: absolute;
+    top: 0;
+    left: 0; */
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--secondary2);
+  cursor: pointer;
+}
+
+.checkbox:hover ~ .checkbox::before {
+  content: "";
+  background-color: transparent;
+  background-image: linear-gradient(to top left, (#d05aff, #5af4ff));
+  display: block;
+}
+
+.checkbox:after {
+  content: "";
+  /* position: absolute; */
+  display: none;
+  /* top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px; */
+}
+
+.checkbox-checked {
+  background-color: transparent;
+  background: linear-gradient(to top left, #d05aff, #5af4ff);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  z-index: 2;
+  border: 1px solid var(--secondary2);
+  position: relative;
+}
+
+.checkbox-checked::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  content: "";
+  display: block;
+  background-image: url("./assets/iconCheck.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+}
+
+.reorder {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--secondary2);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

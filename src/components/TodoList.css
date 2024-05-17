@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;0,700;1,400");
+
+:root {
+    /* Primary */
+    --accent: hsl(220, 98%, 61%);
+    --CheckBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+    /* Dark Theme */
+    --primary: hsl(233, 11%, 84%);
+    --secondary: hsl(235, 24%, 19%);
+    --secondary2: hsl(235, 19%, 35%);
+    --secondary3: hsl(236, 9%, 61%);
+    --background: hsl(235, 21%, 11%);
+    --background2: hsl(235, 24%, 19%);
+
+    font-family: "Josefin Sans", sans-serif;
+}
+
+[data-theme="light"] {
+    --accent: hsl(220, 98%, 61%);
+    --CheckBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+    /* Light Theme */
+    --primary: hsl(234, 8%, 51%);
+    --secondary: hsl(235, 24%, 19%);
+    --secondary2: hsl(235, 19%, 35%);
+    --secondary3: hsl(236, 9%, 61%);
+    --background2: hsl(0, 0%, 98%);
+    --VeryDarkBlue: hsl(235, 21%, 11%);
+}
+.Card {
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--background2);
+    margin-bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.todo_list {
+    background-color: transparent;
+}
+
+.todo_item {
+    width: 100%;
+    font-size: 0.8rem;
+    height: 3rem;
+    outline: transparent;
+    border: none;
+    background-color: inherit;
+    border-bottom: 1px solid var(--secondary3);
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.todo_item--btn {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.todo_item--btn img {
+    height: 1rem;
+    width: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.todo_item--btn:hover img {
+    opacity: 1;
+}
+
+.controls {
+    padding: 0 1rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7em;
+    font-weight: 700;
+    color: var(--secondary3);
+}
+
+.segregate-btn,
+.clear-btn {
+    background: none;
+    border: none;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--secondary3);
+    transition: all 200ms ease-in-out;
+}
+
+.segregate-btn:hover,
+.segregate-btn:active,
+.clear-btn:hover,
+.clear-btn:active {
+    color: var(--accent);
+}
+
+.active {
+    color: var(--accent);
+}
+
+.todo--completed {
+    color: var(--secondary3);
+    text-decoration: line-through;
+}
